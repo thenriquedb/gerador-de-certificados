@@ -33,7 +33,9 @@ public class CertificateService {
             JasperReport jasper = JasperCompileManager.compileReport(reportPath);
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasper, parameters, new JREmptyDataSource());
             String outputPath = ResourceUtils.getFile(REPORT_OUTPUT).getAbsolutePath();
-            JasperExportManager.exportReportToPdfFile(jasperPrint, outputPath + "thiago.pdf");
+            String filename = student.getName().replaceAll(" ", "_").toLowerCase();
+
+            JasperExportManager.exportReportToPdfFile(jasperPrint, outputPath + filename + ".pdf");
         } catch (Exception e) {
             throw new RuntimeException(e.getMessage());
         }
