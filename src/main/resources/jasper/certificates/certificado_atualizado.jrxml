@@ -1,0 +1,49 @@
+<!-- Created with Jaspersoft Studio version 7.0.2.final using JasperReports Library version 7.0.2-31532122640f516c6d17238ae0e41a08113d5ac0  -->
+<jasperReport name="certificate" language="java" pageWidth="842" pageHeight="570" columnWidth="842" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="3a1044d9-0b41-4901-ad1f-c52942174df4">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="name" class="java.lang.String"/>
+	<parameter name="course" class="java.lang.String"/>
+	<parameter name="courseDuration" class="java.lang.Integer"/>
+	<parameter name="startDate" class="java.util.Date"/>
+	<parameter name="endDate" class="java.util.Date"/>
+	<parameter name="imgBg" class="java.lang.Object"/>
+	<query language="sql"><![CDATA[]]></query>
+	<detail>
+		<band height="570" splitType="Stretch">
+			<element kind="rectangle" uuid="302e083d-14fd-4f51-bf62-14140763d608" x="138" y="260" width="566" height="1" forecolor="#0D11FF"/>
+			<element kind="image" uuid="f18350d0-3688-43ae-8e9b-0ca67358268b" x="0" y="0" width="842" height="570">
+				<expression><![CDATA[$P{imgBg}]]></expression>
+			</element>
+			<element kind="textField" uuid="171f1e0c-751b-4d9a-bc14-ed7c51bff8d8" x="140" y="230" width="564" height="31" fontSize="25.0" hTextAlign="Center">
+				<expression><![CDATA[$P{name}]]></expression>
+			</element>
+			<element kind="textField" uuid="8dfa3ffd-e155-4bbd-bd9e-1923c6d81bd7" x="138" y="300" width="566" height="70" fontSize="14.0" hTextAlign="Left">
+				<expression><![CDATA["Certificamos que " + $P{name} + " concluiu com êxito o curso " + $P{course}  + ", com carga horária total de "  + $P{courseDuration} + "hora(s), realizado no período de "]]></expression>
+			</element>
+			<element kind="textField" uuid="57276a25-0cc5-4c79-bb81-d5103559b6a3" x="169" y="333" width="90" height="20" fontSize="14.0" pattern="dd/MM/yyyy" hTextAlign="Left">
+				<expression><![CDATA[$P{startDate}]]></expression>
+			</element>
+			<element kind="textField" uuid="51ac3394-e1d4-4a31-a5d2-fffb0bc3a2b0" x="277" y="333" width="90" height="20" fontSize="14.0" pattern="dd/MM/yyyy" hTextAlign="Left">
+				<expression><![CDATA[$P{endDate}]]></expression>
+			</element>
+			<element kind="staticText" uuid="f02b166c-eb71-434a-be83-4722435e65cb" x="264" y="333" width="14" height="20" fontSize="13.0" bold="false">
+				<text><![CDATA[a]]></text>
+			</element>
+			<element kind="staticText" uuid="85bb76a8-d227-4763-b34d-e2655f053189" x="360" y="333" width="14" height="20" fontSize="13.0" bold="false">
+				<text><![CDATA[.]]></text>
+			</element>
+			<element kind="staticText" uuid="64c5d4aa-3753-4f43-b35c-faa65bb61c2c" x="138" y="142" width="566" height="58" fontSize="33.0" bold="true" hTextAlign="Center">
+				<text><![CDATA[CERTIFICADO  ]]></text>
+			</element>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</detail>
+</jasperReport>
