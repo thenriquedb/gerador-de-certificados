@@ -17,7 +17,7 @@ public class CertificateService {
     public static final String REPORT_OUTPUT = "temp/jasper/outputs/";
     public static final String REPORT_BG = "classpath:img/bg-certificate.png";
 
-    public void generateReport(Student student) throws IOException, JRException {
+    public String generateReport(Student student) throws IOException, JRException {
         String reportPath = ResourceUtils.getFile(REPORT_PATH + REPORT_NAME).getAbsolutePath();
         byte[] imageBytes = loadImage();
 
@@ -37,6 +37,8 @@ public class CertificateService {
             String  fullPath = outputPath + "/" + filename + ".pdf";
 
             JasperExportManager.exportReportToPdfFile(jasperPrint, fullPath);
+
+            return fullPath;
         } catch (Exception e) {
             throw new RuntimeException(e.getMessage());
         }
