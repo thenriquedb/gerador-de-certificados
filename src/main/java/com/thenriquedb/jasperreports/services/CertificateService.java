@@ -13,7 +13,7 @@ import java.util.Map;
 @Service
 public class CertificateService {
     public static final String REPORT_PATH = "classpath:jasper/certificates/";
-    public static final String REPORT_NAME = "certificado_atualizado.jrxml";
+    public static final String REPORT_NAME = "certificate_template.jrxml";
     public static final String REPORT_OUTPUT = "temp/jasper/outputs/";
     public static final String REPORT_BG = "classpath:img/bg-certificate.png";
 
@@ -34,8 +34,9 @@ public class CertificateService {
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasper, parameters, new JREmptyDataSource());
             String outputPath = ResourceUtils.getFile(REPORT_OUTPUT).getAbsolutePath();
             String filename = student.getName().replaceAll(" ", "_").toLowerCase();
+            String  fullPath = outputPath + "/" + filename + ".pdf";
 
-            JasperExportManager.exportReportToPdfFile(jasperPrint, outputPath + filename + ".pdf");
+            JasperExportManager.exportReportToPdfFile(jasperPrint, fullPath);
         } catch (Exception e) {
             throw new RuntimeException(e.getMessage());
         }
